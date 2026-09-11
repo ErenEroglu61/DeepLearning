@@ -1,0 +1,7 @@
+def visualize_img(data, amount=10):
+    plt.figure(figsize=(10,10))
+    for n in range(amount):
+        ax = plt.subplot(5,5,n+1)
+        plt.imshow(data[n], cmap="gray")
+        plt.axis('off')
+    plt.show()
