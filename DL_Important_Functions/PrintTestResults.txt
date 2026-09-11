@@ -1,0 +1,5 @@
+loss, precision, recall, acc = model.evaluate(X_test,y_test, verbose=False)
+print("Test Accuracy: %.1f%%" % (100.0 * acc))
+print("Test Loss: %.1f%%" % (100.0 * loss))
+print("Test Precision: %.1f%%" % (100.0 * precision))
+print("Test Recall: %.1f%%" %  (100.0 * recall))

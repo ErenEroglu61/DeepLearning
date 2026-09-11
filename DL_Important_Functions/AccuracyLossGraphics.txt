@@ -1,0 +1,23 @@
+# ------------------------ Graphic 1 ACCURACY ----------------------------
+
+plt.figure(figsize=(20,5))
+plt.subplot(1,2,1)
+plt.plot(history.history['accuracy'],color='b',label="Traning Accuracy")
+plt.legend(loc="lower right")
+plt.xlabel('Epoch', fontsize=16)
+plt.ylabel('Accuracy', fontsize=16)
+plt.ylim([min(plt.ylim()),1])
+plt.title("Accuracy Graph", fontsize=16)
+
+# ------------------------ Graphic 2 LOSS --------------------------------
+
+plt.subplot(1,2,2)
+plt.plot(history.history['loss'], color='b', label='Training Loss')
+plt.plot(history.history['val_loss'], color='r', label='Validation Loss')
+plt.legend(loc="upper right")
+plt.xlabel('Epoch', fontsize=16)
+plt.ylabel('Loss', fontsize=16)
+plt.ylim([0,max(plt.ylim())])
+plt.title("Loss Graph", fontsize=16)
+
+plt.show()
