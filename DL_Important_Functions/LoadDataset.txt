@@ -1,0 +1,27 @@
+def load_dataset(path):
+    x = []
+    labels = []
+
+    image_paths = sorted(list(paths.list_images(path)))
+
+    for image_path in image_paths:
+
+        img = cv2.imread(image_path)
+
+        img = cv2.resize(img,target_size)
+
+        x.append(img)
+
+        label = image_path.split(os.path.sep)[-2]
+
+        labels.append(waste_labels[label])
+
+    x,labels = shuffle(x,labels,random_state=15)
+
+    print(f"X shape: {np.array(x).shape}")
+    print(f"Label classes: {len(np.unique(labels))} Numbers: {len(labels)}")
+
+    return x,labels
+
+dir_path = ''
+x,labels = load_dataset(dir_path)
