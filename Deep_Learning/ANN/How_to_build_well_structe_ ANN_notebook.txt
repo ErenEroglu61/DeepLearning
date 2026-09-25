@@ -1,0 +1,80 @@
+ALT + 192 -> └
+ALT + 195 -> ├
+ALT + 196 -> ─
+
+01 - Import Libraries
+02 - Load Dataset
+03 - Initial Data Inspection
+    ├── shape
+    ├── head()
+    ├── info()
+    └── describe()
+
+04 - Data Quality
+    ├── Data types
+    ├── Missing values
+    ├── Duplicates
+    └── Outliers
+
+05 - Exploratory Data Analysis
+    ├── Target distribution
+    ├── Feature distributions
+    ├── Correlations
+    └── Important visualizations
+
+06 - Define Problem
+    ├── Classification / Regression
+    ├── Target
+    └── Features
+
+07 - X / y Separation
+
+08 - Train / Validation / Test Split
+
+09 - Prevent Data Leakage
+
+10 - Preprocessing
+    ├── Encoding
+    └── Scaling
+
+11 - Build ANN
+    ├── Input layer
+    ├── Hidden layers
+    └── Output layer
+
+12 - Configure Model
+    ├── Activation functions
+    ├── Loss function
+    ├── Optimizer
+    └── Learning rate
+
+13 - Training
+    ├── Batch size
+    ├── Epochs
+    └── Validation
+
+14 - Callbacks
+    └── Early Stopping
+
+15 - Evaluation
+    ├── Metrics
+    ├── Confusion Matrix
+    └── Classification Report
+
+16 - Error Analysis
+    ├── Overfitting
+    ├── Underfitting
+    └── Learning curves
+
+17 - Model Saving
+    ├── Model
+    ├── Scaler
+    └── Encoders
+
+18 - Prediction Pipeline
+    └── Raw data → preprocessing → ANN → prediction
+
+19 - Final Notes
+    ├── Best parameters
+    ├── Final metrics
+    └── What could be improved?
