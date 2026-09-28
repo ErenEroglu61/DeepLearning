@@ -1,0 +1,19 @@
+def build_model(hp):
+    model = keras.Sequential()
+    model.add(keras.layers.Input(shape=(10,)))  # Example input size
+
+    # Automatically tune the number of neurons in the hidden layer
+    hp_units = hp.Int("units", min_value=32, max_value=256, step=32)
+    model.add(keras.layers.Dense(units=hp_units, activation="relu"))
+
+    model.add(keras.layers.Dense(1, activation="sigmoid"))  # Binary output
+
+    # Automatically tune the learning rate
+    hp_learning_rate = hp.Choice("learning_rate", values=[1e-2, 1e-3, 1e-4])
+
+    model.compile(
+        optimizer=keras.optimizers.Adam(learning_rate=hp_learning_rate),
+        loss="binary_crossentropy",
+        metrics=["accuracy"],
+    )
+    return model
