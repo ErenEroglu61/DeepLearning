@@ -1,0 +1,128 @@
+01 - Import Libraries
+02 - Load Dataset
+    ├── Folder / label structure
+    └── Image paths or tf.data pipeline
+
+03 - Initial Data Inspection
+    ├── Number of images
+    ├── Number of classes
+    ├── Image sizes and channels
+    └── Corrupted / missing files
+
+04 - Data Quality
+    ├── Class balance
+    ├── Duplicates / near-duplicates
+    ├── Label consistency
+    └── Outlier or unusual images
+
+05 - Exploratory Data Analysis
+    ├── Class distribution
+    ├── Sample images per class
+    ├── Brightness / color statistics
+    └── Background or shortcut patterns
+
+06 - Define Problem
+    ├── Task (classification / detection / segmentation)
+    ├── Classes
+    ├── Success metric (e.g., macro-F1, recall)
+    └── Cost of errors
+
+07 - Split Strategy
+    ├── Train / Validation / Test
+    ├── Stratified split
+    ├── Group-based split (if same subject/source)
+    └── Verify no leakage across splits
+
+08 - Data Pipeline
+    ├── Resize
+    ├── Normalization
+    ├── Label encoding + saved mapping
+    ├── Batching
+    └── Augmentation (training set only)
+
+09 - Baseline CNN
+    ├── Conv → ReLU → Pooling blocks
+    ├── Flatten or Global Average Pooling
+    ├── Dense layers
+    └── Output layer (softmax / sigmoid)
+
+10 - Configure Model
+    ├── Loss function
+    ├── Optimizer
+    ├── Learning rate
+    └── Metrics
+
+11 - Training
+    ├── Batch size
+    ├── Epochs
+    └── Validation monitoring
+
+12 - Callbacks
+    ├── EarlyStopping
+    ├── ModelCheckpoint
+    ├── CSVLogger
+    └── TensorBoard
+
+13 - Baseline Evaluation
+    ├── Training vs validation curves
+    ├── Confusion matrix
+    └── Per-class report
+
+14 - Controlled Experiments
+    ├── Deeper CNN
+    ├── Batch Normalization
+    ├── Dropout
+    ├── Data augmentation
+    └── One change at a time (log every run)
+
+15 - Transfer Learning
+    ├── Pretrained backbone (MobileNetV2 / ResNet50 / EfficientNetB0)
+    ├── Feature extraction (frozen backbone)
+    ├── Fine-tuning (optional, unfreeze later layers)
+    └── Backbone-specific preprocessing
+
+16 - Experiment Tracking
+    ├── Experiment ID
+    ├── Architecture, input size, batch size
+    ├── Optimizer, learning rate, epochs
+    ├── Augmentation config
+    ├── Best validation metrics
+    └── Training time, model size, inference time
+
+17 - Hyperparameter Tuning
+    ├── Learning rate
+    ├── Batch size
+    ├── Dropout rate
+    ├── Number of conv blocks / filters
+    └── Optimizer
+
+18 - Error Analysis
+    ├── Overfitting (train vs validation gap)
+    ├── Underfitting
+    ├── Misclassified examples
+    └── Class-specific failures
+
+19 - Final Model Selection
+    ├── Validation performance
+    ├── Generalization
+    ├── Class-level performance
+    └── Size, latency, deployment needs
+
+20 - Final Test Evaluation
+    ├── Run once only
+    ├── Accuracy, macro-F1, per-class metrics
+    └── Final confusion matrix
+
+21 - Model Saving
+    ├── Model (.keras)
+    ├── Class names and order
+    ├── Preprocessing config
+    └── Input size and evaluation results
+
+22 - Prediction Pipeline
+    └── Raw image → preprocessing → CNN → class + confidence
+
+23 - Final Notes
+    ├── Best configuration
+    ├── Final metrics
+    └── What could be improved?
