@@ -1,0 +1,105 @@
+01 - Import Libraries
+
+02 - Load Dataset
+
+03 - Initial Data Inspection
+    ├── shape
+    ├── head()
+    ├── info()
+    └── describe()
+
+04 - Data Quality
+    ├── Data types
+    ├── Missing values
+    ├── Duplicates
+    └── Outliers
+
+05 - Exploratory Data Analysis
+    ├── Sequence / time-series visualization
+    ├── Target distribution
+    ├── Feature distributions
+    ├── Trends and seasonality (if applicable)
+    └── Correlations / important visualizations
+
+06 - Define Problem
+    ├── Forecasting / sequence classification / text classification
+    ├── Target
+    └── Features and sequence order
+
+07 - X / y Separation
+
+08 - Train / Validation / Test Split
+    ├── Chronological split for time-series data
+    └── Stratified / random split when appropriate for independent sequences
+
+09 - Prevent Data Leakage
+    ├── Split before fitting preprocessing objects
+    ├── Fit scalers / encoders on training data only
+    └── Keep future information out of training inputs
+
+10 - Preprocessing
+    ├── Missing-value handling
+    ├── Encoding (if needed)
+    ├── Scaling (if needed)
+    └── Preserve sequence order
+
+11 - Create Sequences
+    ├── Define time_steps / window size
+    ├── Build input windows
+    ├── Define target alignment
+    └── Check input shape: (samples, time_steps, features)
+
+12 - Build RNN
+    ├── Input layer
+    ├── SimpleRNN / LSTM / GRU layer
+    ├── Optional Dropout
+    └── Output layer appropriate to the task
+
+13 - Configure Model
+    ├── Activation functions
+    ├── Loss function
+    ├── Optimizer
+    └── Learning rate
+
+14 - Training
+    ├── Batch size
+    ├── Epochs
+    ├── Validation data
+    └── Shuffle setting appropriate to the sequence task
+
+15 - Callbacks
+    ├── Early Stopping
+    ├── Model Checkpoint
+    └── ReduceLROnPlateau (optional)
+
+16 - Evaluation
+    ├── Task-appropriate metrics
+    ├── Regression: MAE / RMSE / R² (as appropriate)
+    ├── Classification: confusion matrix / classification report
+    └── Compare against a simple baseline
+
+17 - Error Analysis
+    ├── Overfitting / underfitting
+    ├── Training and validation learning curves
+    ├── Prediction errors over time / across classes
+    └── Inspect difficult examples
+
+18 - Model Comparison
+    ├── Baseline model
+    ├── SimpleRNN
+    ├── LSTM
+    └── GRU
+
+19 - Model Saving
+    ├── Model
+    ├── Scaler / encoders (if used)
+    └── Feature order and sequence length
+
+20 - Prediction Pipeline
+    └── Raw data → preprocessing → sequence creation → RNN → prediction
+
+21 - Final Notes
+    ├── Best model and parameters
+    ├── Final validation / test metrics
+    ├── Main findings
+    └── What could be improved?
