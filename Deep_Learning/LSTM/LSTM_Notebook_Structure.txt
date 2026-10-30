@@ -1,0 +1,160 @@
+LSTM - NOTEBOOK STRUCTURE
+========================
+
+1. IMPORT LIBRARIES
+-------------------
+- NumPy
+- Pandas
+- Matplotlib / Seaborn
+- TensorFlow / Keras
+- Scikit-learn
+- Pickle / Joblib (for saving preprocessing objects)
+
+2. LOAD DATASET
+---------------
+- Read dataset (CSV / TXT)
+- Inspect first rows
+- Check dataset shape
+- Check data types
+- Identify input features and target
+
+3. EXPLORATORY DATA ANALYSIS (EDA)
+----------------------------------
+- Check missing values
+- Check duplicate records
+- Inspect target distribution
+- Analyze sequence lengths (especially for text data)
+- Visualize relevant distributions
+- Check class imbalance
+
+4. DATA PREPROCESSING
+---------------------
+For text data:
+- Handle missing text
+- Remove duplicates if appropriate
+- Clean text only when justified
+- Normalize text if appropriate
+- Split data into train / validation / test sets
+- Fit tokenizer on training data only
+- Convert text into sequences
+- Apply padding / truncation
+- Encode target labels
+
+For numerical time-series / sequential data:
+- Handle missing values
+- Sort observations chronologically
+- Select input features and target
+- Scale features using training data only
+- Create sliding-window sequences
+- Split chronologically to avoid data leakage
+
+5. SEQUENCE PREPARATION
+-----------------------
+For text data:
+- Define vocabulary size
+- Define maximum sequence length
+- Convert text to integer sequences
+- Pad sequences
+- Prepare labels
+
+For time-series data:
+- Define time steps (window size)
+- Define prediction horizon
+- Create X and y sequences
+- Verify input shape: (samples, time_steps, features)
+
+6. BUILD LSTM MODEL
+-------------------
+Example architecture for text classification:
+
+Input
+  |
+Embedding
+  |
+LSTM (64 units)
+  |
+Dropout (0.3)
+  |
+Dense (32, ReLU)
+  |
+Dropout (0.2)
+  |
+Output Layer
+
+Layers to explore:
+- Embedding
+- LSTM
+- Bidirectional
+- Dropout
+- Dense
+- Return_sequences=True (when stacking recurrent layers)
+
+7. COMPILE MODEL
+----------------
+- Optimizer: Adam
+- Loss:
+  - BinaryCrossentropy for binary classification
+  - SparseCategoricalCrossentropy for integer multiclass labels
+  - CategoricalCrossentropy for one-hot multiclass labels
+  - MeanSquaredError for regression
+- Metrics: Accuracy, Precision, Recall (classification)
+
+8. TRAIN MODEL
+--------------
+- Set epochs and batch size
+- Use validation data
+- Add EarlyStopping
+- Add ModelCheckpoint
+- Add ReduceLROnPlateau
+- Monitor training and validation loss
+
+9. MODEL EVALUATION
+-------------------
+For classification:
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion Matrix
+- Classification Report
+- ROC-AUC when appropriate
+
+For regression:
+- MAE
+- MSE / RMSE
+- R-squared
+
+10. VISUALIZATION
+-----------------
+- Training vs. Validation Loss
+- Training vs. Validation Accuracy
+- Confusion Matrix (classification)
+- Actual vs. Predicted values (regression)
+- Prediction examples
+
+11. MODEL COMPARISON / EXPERIMENTS
+----------------------------------
+Experiment with:
+- LSTM units: 32, 64, 128
+- Dropout: 0.2, 0.3, 0.5
+- Learning rate: 0.001, 0.0005
+- Batch size: 16, 32, 64
+- Number of LSTM layers
+- Bidirectional LSTM vs. standard LSTM
+- Different sequence lengths / window sizes
+
+12. SAVE MODEL AND PREPROCESSING OBJECTS
+----------------------------------------
+- Save model (.keras)
+- Save tokenizer (.pkl) for text projects
+- Save label encoder (.pkl), if used
+- Save scaler (.pkl), if used
+- Save preprocessing configuration (e.g. vocabulary size and sequence length)
+
+13. FINAL NOTES
+---------------
+- Prevent data leakage: fit tokenizers, encoders, and scalers on training data only.
+- For time-series forecasting, do not randomly shuffle chronological data before splitting.
+- Use a test set only for final evaluation.
+- Compare against a simple baseline model.
+- Record experiments and results.
